@@ -21,7 +21,8 @@
 }
 
 .features:hover h3 {
-  color: red;
+  color: #cc1616;
+  text-shadow: 0px 0px 30px #7f462c;
 }
 
 .features:hover {
