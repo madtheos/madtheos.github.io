@@ -1,0 +1,16 @@
+{
+  "info":[
+    {
+        "class":"mu-phone",
+        "value": "+91 8137 0202 85"
+    },
+    {
+        "class":"mu-email",
+        "value": "mail@discsmachines.co.in"
+    },
+    {
+        "class":"mu-address",
+        "value": "Plassanal P.O, Kerala 686579, India"
+    }
+  ]
+}
