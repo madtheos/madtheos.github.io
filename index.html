@@ -5,8 +5,11 @@
   <meta charset="utf-8">
   <meta content="width=device-width, initial-scale=1.0" name="viewport">
   <title>Discs and Machines - Sunny's Gramophone Museum</title>
-  <meta content="" name="description">
-  <meta content="" name="keywords">
+  <meta content="Official site of 'Discs and Machines - Sunny's Gramophone Museum and Records Archive', Plassanal, Kerala, India. 
+    Family-owned private museum. We have vintage sewing machines, cars, and more 
+    in addition to our main focus on gramophones/phonographs and shellac records." name="description">
+  <meta content="shellac, gramophones, phonographs, 78rpm, vinyl, wire recorders, projectors, cassette tape, sunny mathew, history, 
+    music, vintage, antique, exhibits, museum, archive, research, plassanal, pala, erattupetta, kerala, india" name="keywords">
 
   <!-- Favicons -->
   <link href="assets/img/favicon.png" rel="icon">
@@ -36,38 +39,37 @@
   ======================================================== -->
   
 <script>
-window.onload = function(){
-    fetchJSONData();
-};
+  window.onload = function(){
+      fetchJSONData();
+  };
 
-function fetchJSONData() {
-	fetch("./data.json")
-		.then((res) => {
-			if (!res.ok) {
-				throw new Error
-					(`HTTP error! Status: ${res.status}`);
-			}
-			return res.json();
-		})
-		.then((data) => {
-				  //window.alert(data.info[0].class);
-				  processInfo(data.info);
-			    //console.log(data)
-			  })
-		.catch((error) => 
-			   console.error("Unable to fetch data:", error));
-}
+  function fetchJSONData() {
+    fetch("./data.json")
+      .then((res) => {
+        if (!res.ok) {
+          throw new Error
+            (`HTTP error! Status: ${res.status}`);
+        }
+        return res.json();
+      })
+      .then((data) => {
+            //window.alert(data.info[0].class);
+            processInfo(data.info);
+            //console.log(data)
+          })
+      .catch((error) => 
+          console.error("Unable to fetch data:", error));
+  }
 
-function processInfo(info){
-	//window.alert(info[0].val);
-  for (var i=0; i < info.length; i++) {
-		var dom_items = document.getElementsByClassName(info[i].class);
-		for (var j=0; j < dom_items.length; j++) {
-		  dom_items[j].innerHTML = info[i].value;
-		}
-	}
-}
-
+  function processInfo(info){
+    //window.alert(info[0].val);
+    for (var i=0; i < info.length; i++) {
+      var dom_items = document.getElementsByClassName(info[i].class);
+      for (var j=0; j < dom_items.length; j++) {
+        dom_items[j].innerHTML = info[i].value;
+      }
+    }
+  }
 </script>
   
 </head>
@@ -83,9 +85,8 @@ function processInfo(info){
           <i class="bi bi-phone d-flex align-items-center ms-4"><span class="mu-phone">javascript-required</span></i>
         </div>
         <div class="social-links d-none d-md-flex align-items-center">
-          <a href="#" class="facebook"><i class="bi bi-facebook"></i></a>
-          <a href="#" class="youtube"><i class="bi bi-youtube"></i></a>
-          <a href="#" class="twitter"><i class="bi bi-twitter-x"></i></a>
+          <a href="#" class="facebook" target="_blank"><i class="bi bi-facebook"></i></a>
+          <a href="https://www.youtube.com/@9387473424" class="youtube" target="_blank"><i class="bi bi-youtube"></i></a>
         </div>
       </div>
     </div><!-- End Top Bar -->
@@ -120,7 +121,7 @@ function processInfo(info){
     <!-- Hero Section -->
     <section id="hero" class="hero section dark-background">
 
-      <img src="assets/img/hero-bg.jpg" alt="" data-aos="fade-in">
+      <img src="assets/img/hero-bg.jpg" alt="view of the gramophones inside the museum" data-aos="fade-in">
 
       <div class="container" data-aos="fade-up" data-aos-delay="100">
         <div class="row justify-content-start">
@@ -149,7 +150,7 @@ function processInfo(info){
         <div class="row gy-4">
 
           <div class="col-lg-6 order-1 order-lg-2" data-aos="fade-up" data-aos-delay="100">
-            <img src="assets/img/inside.jpg" class="img-fluid" alt="">
+            <img src="assets/img/inside.jpg" class="img-fluid" alt="photo showing the two floors of the museum">
           </div>
 
           <div class="col-lg-6 order-2 order-lg-1 content" data-aos="fade-up" data-aos-delay="200">
@@ -222,10 +223,10 @@ function processInfo(info){
             }
           </script>
           <div class="swiper-wrapper align-items-center">
-            <div class="swiper-slide"><img src="assets/img/clients/client-1.png" class="img-fluid" alt=""></div>
-            <div class="swiper-slide"><img src="assets/img/clients/client-2.png" class="img-fluid" alt=""></div>
-            <div class="swiper-slide"><img src="assets/img/clients/client-3.png" class="img-fluid" alt=""></div>
-            <div class="swiper-slide"><img src="assets/img/clients/client-4.png" class="img-fluid" alt=""></div>
+            <div class="swiper-slide"><img src="assets/img/org/ght.png" class="img-fluid" alt="Gesellschaft fuer Historische Tontraeger"></div>
+            <div class="swiper-slide"><img src="assets/img/org/sirc.png" class="img-fluid" alt="Society of Indian Record Collectors"></div>
+            <div class="swiper-slide"><img src="assets/img/org/arsc.png" class="img-fluid" alt="Association for Recorded Sound Collections"></div>
+            <div class="swiper-slide"><img src="assets/img/org/mathaisons.png" class="img-fluid" alt="Mathaisons"></div>
           </div>
         </div>
 
@@ -251,7 +252,7 @@ function processInfo(info){
 
           <div class="col-lg-4 col-md-6" >
             <div class="card bg-dark features rounded-0">
-              <img class="card-img" src="assets/img/features/historybw.jpg" alt="Card image">
+              <img class="card-img" src="assets/img/features/historybw.jpg" alt="display showing history of recorded sound">
               <div class="overlay-div"></div> <!-- the new div -->
               <div class="card-img-overlay stretched-link">
                 <h3 class="card-title">Explore the History of Sound Recording</h3>
@@ -261,7 +262,7 @@ function processInfo(info){
 
           <div class="col-lg-4 col-md-6" >
             <div class="card bg-dark text-white features rounded-0">
-              <img class="card-img" src="assets/img/features/groovesbw.jpg" alt="Card image">
+              <img class="card-img" src="assets/img/features/groovesbw.jpg" alt="close-up of shellac disc being played, showing grooves">
               <div class="overlay-div"></div> <!-- the new div -->
               <div class="card-img-overlay stretched-link">
                 <h3 class="card-title">Hear Mechanically Reproduced Sound</h3>
@@ -271,7 +272,7 @@ function processInfo(info){
 
           <div class="col-lg-4 col-md-6" >
             <div class="card bg-dark text-white features rounded-0">
-              <img class="card-img" src="assets/img/features/antiquesbw.jpg" alt="Card image">
+              <img class="card-img" src="assets/img/features/antiquesbw.jpg" alt="old movie theater projector">
               <div class="overlay-div"></div> <!-- the new div -->
               <div class="card-img-overlay stretched-link">
                 <h3 class="card-title">See the Antique Collection</h3>
@@ -281,7 +282,7 @@ function processInfo(info){
 
           <div class="col-lg-4 col-md-6" >
             <div class="card bg-dark text-white features rounded-0">
-              <img class="card-img" src="assets/img/features/carbw.jpg" alt="Card image">
+              <img class="card-img" src="assets/img/features/carbw.jpg" alt="shows Austin vintage car">
               <div class="overlay-div"></div> <!-- the new div -->
               <div class="card-img-overlay stretched-link">
                 <h3 class="card-title">Vintage Cars</h3>
@@ -291,7 +292,7 @@ function processInfo(info){
 
           <div class="col-lg-4 col-md-6" >
             <div class="card bg-dark text-white features rounded-0">
-              <img class="card-img" src="assets/img/features/recordsbw.jpg" alt="Card image">
+              <img class="card-img" src="assets/img/features/recordsbw.jpg" alt="view of shelves full of gramophone disc records">
               <div class="overlay-div"></div> <!-- the new div -->
               <div class="card-img-overlay stretched-link">
                 <h3 class="card-title">100,000 Discs</h3>
@@ -301,7 +302,7 @@ function processInfo(info){
 
           <div class="col-lg-4 col-md-6" >
             <div class="card bg-dark text-white features rounded-0">
-              <img class="card-img" src="assets/img/features/ruralbw.jpg" alt="Card image">
+              <img class="card-img" src="assets/img/features/ruralbw.jpg" alt="view of the museum compound, nature">
               <div class="overlay-div"></div> <!-- the new div -->
               <div class="card-img-overlay stretched-link">
                 <h3 class="card-title">Enjoy the Quiet Countryside</h3>
@@ -352,19 +353,19 @@ function processInfo(info){
               <div class="swiper-wrapper align-items-center">
 
                 <div class="swiper-slide">
-                  <img src="assets/img/gallery/gramo.jpg" alt="">
+                  <img src="assets/img/gallery/gramo.jpg" alt="gramophones on display">
                 </div>
 
                 <div class="swiper-slide">
-                  <img src="assets/img/gallery/boards.jpg" alt="">
+                  <img src="assets/img/gallery/boards.jpg" alt="view of some diplay boards">
                 </div>
 
                 <div class="swiper-slide">
-                  <img src="assets/img/gallery/perim.jpg" alt="">
+                  <img src="assets/img/gallery/perim.jpg" alt="path around the museum">
                 </div>
 
                 <div class="swiper-slide">
-                  <img src="assets/img/gallery/up-sideways.jpg" alt="">
+                  <img src="assets/img/gallery/up-sideways.jpg" alt="more gramophones on display">
                 </div>
 
               </div>
@@ -382,9 +383,9 @@ function processInfo(info){
 
             <!--
             <div class="portfolio-description" data-aos="" data-aos-delay="300">
-              <h2>Exercitationem repudiandae officiis neque suscipit</h2>
+              <h2>title for more data</h2>
               <p>
-                Autem ipsum nam porro corporis rerum. Quis eos dolorem eos itaque inventore commodi labore quia quia. Exercitationem repudiandae officiis neque suscipit non officia eaque itaque enim. Voluptatem officia accusantium nesciunt est omnis tempora consectetur dignissimos. Sequi nulla at esse enim cum deserunt eius.
+                more data?
               </p>
             </div>
             -->
@@ -400,7 +401,7 @@ function processInfo(info){
     <!-- Call To Action Section -->
     <section id="call-to-action" class="call-to-action section dark-background">
 
-      <img src="assets/img/cta-bg.jpg" alt="">
+      <img src="assets/img/cta-bg.jpg" alt="view of a traditional Kerala house at Francis Riverfront Nalukettu">
 
       <div class="container">
         <div class="row justify-content-center" data-aos="" data-aos-delay="100">
@@ -495,9 +496,8 @@ function processInfo(info){
               <p><strong>Email:</strong> <span class="mu-email">javascript-required</span></p>
             </div>
             <div class="social-links d-flex mt-4">
-              <a href=""><i class="bi bi-facebook"></i></a>
-              <a href=""><i class="bi bi-youtube"></i></a>
-              <a href=""><i class="bi bi-twitter-x"></i></a>
+              <a href=""><i class="bi bi-facebook" target="_blank"></i></a>
+              <a href="https://www.youtube.com/@9387473424" target="_blank"><i class="bi bi-youtube"></i></a>
             </div>
           </div>
         </div>
