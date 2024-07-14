@@ -50,9 +50,9 @@ function fetchJSONData() {
 			return res.json();
 		})
 		.then((data) => {
-				//window.alert(data.info[0].class);
-				processInfo(data.info);
-			    console.log(data)
+				  //window.alert(data.info[0].class);
+				  processInfo(data.info);
+			    //console.log(data)
 			  })
 		.catch((error) => 
 			   console.error("Unable to fetch data:", error));
@@ -60,8 +60,7 @@ function fetchJSONData() {
 
 function processInfo(info){
 	//window.alert(info[0].val);
-	
-    for (var i=0; i < info.length; i++) {
+  for (var i=0; i < info.length; i++) {
 		var dom_items = document.getElementsByClassName(info[i].class);
 		for (var j=0; j < dom_items.length; j++) {
 		  dom_items[j].innerHTML = info[i].value;
@@ -80,7 +79,7 @@ function processInfo(info){
     <div class="topbar d-flex align-items-center">
       <div class="container d-flex justify-content-center justify-content-md-between">
         <div class="contact-info d-flex align-items-center">
-          <i class="bi bi-envelope d-flex align-items-center"><a href="mailto:contact@example.com"><span class="mu-email">javascript-required</span></a></i>
+          <i class="bi bi-envelope d-flex align-items-center"><span class="mu-email">javascript-required</span></i>
           <i class="bi bi-phone d-flex align-items-center ms-4"><span class="mu-phone">javascript-required</span></i>
         </div>
         <div class="social-links d-none d-md-flex align-items-center">
@@ -233,6 +232,8 @@ function processInfo(info){
 
     </section><!-- /Clients Section -->
 
+
+
     <!-- Services Section -->
     <section id="services" class="services section">
 
@@ -314,27 +315,6 @@ function processInfo(info){
     </section><!-- /Services Section -->
 
 
-    <!-- Call To Action Section -->
-    <section id="call-to-action" class="call-to-action section dark-background">
-
-      <img src="assets/img/cta-bg.jpg" alt="">
-
-      <div class="container">
-        <div class="row justify-content-center" data-aos="" data-aos-delay="100">
-          <div class="col-xl-10">
-            <div class="text-center">
-              <h3>Our Sister Concern</h3>
-              <p>10km from the museum, <b>Francis Riverfront Nalukettu</b> is our family-owned farm with traditional central Kerala wooden houses.</p>
-              <p>It is hugged by Kallar, a tributary of the Meenachil river.</p>
-              <p>Visit for a stay or book as the venue for your next event or photoshoot.</p>
-              <a class="cta-btn" href="https://www.mathaisons.com" target="_blank">More...</a>
-            </div>
-          </div>
-        </div>
-      </div>
-
-    </section><!-- /Call To Action Section -->
-
     <!-- Portfolio Section -->
     <section id="gallery" class="portfolio section">
 
@@ -414,6 +394,30 @@ function processInfo(info){
       </div>
     </section><!-- /Portfolio Section -->
 
+
+
+    <!-- Call To Action Section -->
+    <section id="call-to-action" class="call-to-action section dark-background">
+
+      <img src="assets/img/cta-bg.jpg" alt="">
+
+      <div class="container">
+        <div class="row justify-content-center" data-aos="" data-aos-delay="100">
+          <div class="col-xl-10">
+            <div class="text-center">
+              <h3>Our Sister Concern</h3>
+              <p>10km from the museum, <b>Francis Riverfront Nalukettu</b> is our family-owned farm with traditional central Kerala wooden houses.</p>
+              <p>It is hugged by Kallar, a tributary of the Meenachil river.</p>
+              <p>Visit for a stay or book as the venue for your next event or photoshoot.</p>
+              <a class="cta-btn" href="https://www.mathaisons.com" target="_blank">More...</a>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </section><!-- /Call To Action Section -->
+
+    
 
     <!-- Contact Section -->
     <section id="contact" class="contact section">
