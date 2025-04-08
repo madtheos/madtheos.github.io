@@ -1,6 +1,6 @@
 ---
 layout: post
-title:  "Welcome to Jekyll!"
+title:  "Welcome to Discs and Machines!"
 date:   2025-04-07 22:40:18 +0530
 categories: jekyll update
 ---
