@@ -1,7 +1,5 @@
 {% assign page-slug = page.name | replace: '.html', '' %}
 
-{% if page-slug == "index" %} {% endif %}
-
 <header id="header" class="header {% if page-slug == 'index' %} fixed-top {% else %} sticky-top {% endif %} ">
 
     <div class="topbar d-flex align-items-center">
@@ -20,7 +18,7 @@
     <div class="branding d-flex align-items-center">
 
       <div class="container position-relative d-flex align-items-center justify-content-between">
-        <a href="index.html" class="logo d-flex align-items-center">
+        <a href="{{ site.baseurl }}/index.html" class="logo d-flex align-items-center">
           <!-- Uncomment the line below if you also wish to use an image logo -->
           <!-- <img src="assets/img/logo.png" alt=""> -->
           <h1 class="sitename">Discs and Machines</h1>
@@ -28,11 +26,11 @@
 
         <nav id="navmenu" class="navmenu">
           <ul>
-            <li><a href="#hero" class="active">Home</a></li>
-            <li><a href="#about">About</a></li>
-            <li><a href="#services">Features</a></li>
-            <li><a href="#gallery">Gallery</a></li>
-            <li><a href="#contact">Contact</a></li>
+            <li><a href="{{ site.baseurl }}/index.html#hero" class="active">Home</a></li>
+            <li><a href="{{ site.baseurl }}/index.html#about">About</a></li>
+            <li><a href="{{ site.baseurl }}/index.html#services">Features</a></li>
+            <li><a href="{{ site.baseurl }}/index.html#gallery">Gallery</a></li>
+            <li><a href="{{ site.baseurl }}/index.html#contact">Contact</a></li>
           </ul>
           <i class="mobile-nav-toggle d-xl-none bi bi-list"></i>
         </nav>

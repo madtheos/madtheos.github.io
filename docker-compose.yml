@@ -1,0 +1,19 @@
+version: '3.8'
+
+services:
+  jekyll:
+    image: ruby:3.2
+    container_name: jekyll-discs
+    working_dir: /site
+    volumes:
+      - .:/site
+    ports:
+      - "4001:4000"
+    command: >
+      sh -c "
+      apt-get update &&
+      apt-get install -y build-essential nodejs &&
+      gem install bundler jekyll &&
+      bundle install &&
+      bundle exec jekyll serve --host=0.0.0.0 --force_polling
+      "
