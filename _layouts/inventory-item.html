@@ -2,20 +2,18 @@
 layout: default
 ---
 
-{% assign item = page.inventory_item %}
-
 <main class="main">
   <div class="page-title dark-background" data-aos="fade">
     <div class="container">
       <nav class="breadcrumbs">
         <ol>
           <li><a href="{{ site.baseurl }}/">Home</a></li>
-          <li class="current">{{ page.inventory_code }}</li>
+          <li class="current">{{ page.short_code }}</li>
         </ol>
       </nav>
-      <h1>{{ item.name }}</h1>
-      {% if item.item_code %}
-        <p class="inventory-item-page__subtitle">Catalogue code {{ item.item_code }}</p>
+      <h1>{{ page.title }}</h1>
+      {% if page.item_code %}
+        <p class="inventory-item-page__subtitle">Catalogue code {{ page.item_code }}</p>
       {% endif %}
     </div>
   </div>
@@ -25,61 +23,61 @@ layout: default
       <div class="row justify-content-center">
         <div class="col-lg-10">
           <div class="inventory-item-card">
-            {% if item.description %}
+            {% if page.description %}
               <div class="inventory-item-card__intro">
-                <p>{{ item.description }}</p>
+                <p>{{ page.description }}</p>
               </div>
             {% endif %}
 
             <div class="row gy-4">
               <div class="col-md-6">
                 <dl class="inventory-item-meta">
-                  {% if item.category %}
+                  {% if page.category %}
                     <div>
                       <dt>Category</dt>
-                      <dd>{{ item.category }}</dd>
+                      <dd>{{ page.category }}</dd>
                     </div>
                   {% endif %}
-                  {% if item.manufacturer_name %}
+                  {% if page.manufacturer_name %}
                     <div>
                       <dt>Manufacturer</dt>
-                      <dd>{{ item.manufacturer_name }}</dd>
+                      <dd>{{ page.manufacturer_name }}</dd>
                     </div>
                   {% endif %}
-                  {% if item.model_name %}
+                  {% if page.model_name %}
                     <div>
                       <dt>Model</dt>
-                      <dd>{{ item.model_name }}</dd>
+                      <dd>{{ page.model_name }}</dd>
                     </div>
                   {% endif %}
-                  {% if item.year_of_manufacture %}
+                  {% if page.year_of_manufacture %}
                     <div>
                       <dt>Year of manufacture</dt>
-                      <dd>{{ item.year_of_manufacture }}</dd>
+                      <dd>{{ page.year_of_manufacture }}</dd>
                     </div>
                   {% endif %}
-                  {% if item.country_of_origin %}
+                  {% if page.country_of_origin %}
                     <div>
                       <dt>Country of origin</dt>
-                      <dd>{{ item.country_of_origin }}</dd>
+                      <dd>{{ page.country_of_origin }}</dd>
                     </div>
                   {% endif %}
-                  {% if item.accession_number %}
+                  {% if page.accession_number %}
                     <div>
                       <dt>Accession number</dt>
-                      <dd>{{ item.accession_number }}</dd>
+                      <dd>{{ page.accession_number }}</dd>
                     </div>
                   {% endif %}
-                  {% if item.serial_number %}
+                  {% if page.serial_number %}
                     <div>
                       <dt>Serial number</dt>
-                      <dd>{{ item.serial_number }}</dd>
+                      <dd>{{ page.serial_number }}</dd>
                     </div>
                   {% endif %}
-                  {% if item.quantity %}
+                  {% if page.quantity %}
                     <div>
                       <dt>Quantity</dt>
-                      <dd>{{ item.quantity }}</dd>
+                      <dd>{{ page.quantity }}</dd>
                     </div>
                   {% endif %}
                 </dl>
@@ -87,70 +85,70 @@ layout: default
 
               <div class="col-md-6">
                 <dl class="inventory-item-meta">
-                  {% if item.condition %}
+                  {% if page.condition %}
                     <div>
                       <dt>Condition</dt>
-                      <dd>{{ item.condition }}</dd>
+                      <dd>{{ page.condition }}</dd>
                     </div>
                   {% endif %}
-                  {% if item.operational_status %}
+                  {% if page.operational_status %}
                     <div>
                       <dt>Operational status</dt>
-                      <dd>{{ item.operational_status }}</dd>
+                      <dd>{{ page.operational_status }}</dd>
                     </div>
                   {% endif %}
-                  {% if item.restoration_status %}
+                  {% if page.restoration_status %}
                     <div>
                       <dt>Restoration status</dt>
-                      <dd>{{ item.restoration_status }}</dd>
+                      <dd>{{ page.restoration_status }}</dd>
                     </div>
                   {% endif %}
-                  {% if item.location %}
+                  {% if page.location %}
                     <div>
                       <dt>Location</dt>
-                      <dd>{{ item.location }}</dd>
+                      <dd>{{ page.location }}</dd>
                     </div>
                   {% endif %}
-                  {% if item.acquisition_date %}
+                  {% if page.acquisition_date %}
                     <div>
                       <dt>Acquisition date</dt>
-                      <dd>{{ item.acquisition_date | date: "%B %d, %Y" }}</dd>
+                      <dd>{{ page.acquisition_date | date: "%B %d, %Y" }}</dd>
                     </div>
                   {% endif %}
-                  {% if item.acquisition_source %}
+                  {% if page.acquisition_source %}
                     <div>
                       <dt>Acquisition source</dt>
-                      <dd>{{ item.acquisition_source }}</dd>
+                      <dd>{{ page.acquisition_source }}</dd>
                     </div>
                   {% endif %}
-                  {% if item.provenance %}
+                  {% if page.provenance %}
                     <div>
                       <dt>Provenance</dt>
-                      <dd>{{ item.provenance }}</dd>
+                      <dd>{{ page.provenance }}</dd>
                     </div>
                   {% endif %}
                 </dl>
               </div>
             </div>
 
-            {% if item.materials or item.dimensions or item.notes %}
+            {% if page.materials or page.dimensions or page.notes %}
               <div class="row gy-4 inventory-item-card__secondary">
-                {% if item.materials %}
+                {% if page.materials %}
                   <div class="col-lg-4">
                     <h2 class="inventory-item-card__heading">Materials</h2>
-                    <p>{{ item.materials }}</p>
+                    <p>{{ page.materials }}</p>
                   </div>
                 {% endif %}
-                {% if item.dimensions %}
+                {% if page.dimensions %}
                   <div class="col-lg-4">
                     <h2 class="inventory-item-card__heading">Dimensions</h2>
-                    <p>{{ item.dimensions }}</p>
+                    <p>{{ page.dimensions }}</p>
                   </div>
                 {% endif %}
-                {% if item.notes %}
+                {% if page.notes %}
                   <div class="col-lg-4">
                     <h2 class="inventory-item-card__heading">Notes</h2>
-                    <p>{{ item.notes }}</p>
+                    <p>{{ page.notes }}</p>
                   </div>
                 {% endif %}
               </div>
