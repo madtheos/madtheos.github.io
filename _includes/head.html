@@ -1,19 +1,21 @@
+    {% assign meta_description = page.description | default: site.description | strip_html | strip_newlines | escape_once %}
+    {% if page.title and page.title != 'Home' %}
+      {% assign meta_title = page.title | append: ' | Discs and Machines' %}
+    {% else %}
+      {% assign meta_title = "Discs and Machines - Sunny's Gramophone Museum" %}
+    {% endif %}
     <meta charset="utf-8">
     <meta content="width=device-width, initial-scale=1.0" name="viewport">
-    <title>Discs and Machines - Sunny's Gramophone Museum</title>
-    <meta content="Official site of 'Discs and Machines - Sunny's Gramophone Museum and Records Archive', Plassanal, Kerala, India. 
-      Family-owned private museum, est. 2015. We have vintage sewing machines, cars, and more 
-      in addition to our main focus on gramophones/phonographs and shellac records." name="description" >
+    <title>{{ meta_title }}</title>
+    <meta content="{{ meta_description }}" name="description" >
     <meta content="shellac, gramophones, phonographs, 78rpm, vinyl, wire recorders, projectors, cassette tape, sunny mathew, history, 
       music, vintage, antique, exhibits, museum, archive, research, plassanal, pala, erattupetta, kerala, india" name="keywords" >
     
     <!-- Open Graph meta tags -->
-    <meta property="og:title" content="Discs and Machines - Sunny's Gramophone Museum and Records Archive">
+    <meta property="og:title" content="{{ meta_title }}">
     <meta property="og:site_name" content="Official Site of Discs and Machines Gramophone Museum">
-    <meta property="og:url" content="https://www.discsmachines.in">
-    <meta property="og:description" content="Official site of 'Discs and Machines - Sunny's Gramophone Museum and Records Archive', 
-      Plassanal, Kerala, India. Family-owned private museum, est. 2015. We have vintage sewing machines, cars, 
-      and more in addition to our main focus on gramophones/phonographs and shellac records.">
+    <meta property="og:url" content="{{ page.url | absolute_url }}">
+    <meta property="og:description" content="{{ meta_description }}">
     <meta property="og:type" content="business.business">
     <meta property="og:image" content="https://www.discsmachines.in/assets/img/og-meta.jpg">
   

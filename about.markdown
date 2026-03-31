@@ -2,6 +2,7 @@
 layout: page
 title: About
 permalink: /about/
+description: Learn more about Discs and Machines and Sunny's Gramophone Museum and Records Archive in Plassanal, Kerala.
 ---
 
 This is the base Jekyll theme. You can find out more info about customizing your Jekyll theme, as well as basic Jekyll usage documentation at [jekyllrb.com](https://jekyllrb.com/)
