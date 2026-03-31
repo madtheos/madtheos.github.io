@@ -1,0 +1,163 @@
+---
+layout: default
+---
+
+{% assign item = page.inventory_item %}
+
+<main class="main">
+  <div class="page-title dark-background" data-aos="fade">
+    <div class="container">
+      <nav class="breadcrumbs">
+        <ol>
+          <li><a href="{{ site.baseurl }}/">Home</a></li>
+          <li class="current">{{ page.inventory_code }}</li>
+        </ol>
+      </nav>
+      <h1>{{ item.name }}</h1>
+      {% if item.item_code %}
+        <p class="inventory-item-page__subtitle">Catalogue code {{ item.item_code }}</p>
+      {% endif %}
+    </div>
+  </div>
+
+  <section class="starter-section section">
+    <div class="container" data-aos="fade-up">
+      <div class="row justify-content-center">
+        <div class="col-lg-10">
+          <div class="inventory-item-card">
+            {% if item.description %}
+              <div class="inventory-item-card__intro">
+                <p>{{ item.description }}</p>
+              </div>
+            {% endif %}
+
+            <div class="row gy-4">
+              <div class="col-md-6">
+                <dl class="inventory-item-meta">
+                  {% if item.category %}
+                    <div>
+                      <dt>Category</dt>
+                      <dd>{{ item.category }}</dd>
+                    </div>
+                  {% endif %}
+                  {% if item.manufacturer_name %}
+                    <div>
+                      <dt>Manufacturer</dt>
+                      <dd>{{ item.manufacturer_name }}</dd>
+                    </div>
+                  {% endif %}
+                  {% if item.model_name %}
+                    <div>
+                      <dt>Model</dt>
+                      <dd>{{ item.model_name }}</dd>
+                    </div>
+                  {% endif %}
+                  {% if item.year_of_manufacture %}
+                    <div>
+                      <dt>Year of manufacture</dt>
+                      <dd>{{ item.year_of_manufacture }}</dd>
+                    </div>
+                  {% endif %}
+                  {% if item.country_of_origin %}
+                    <div>
+                      <dt>Country of origin</dt>
+                      <dd>{{ item.country_of_origin }}</dd>
+                    </div>
+                  {% endif %}
+                  {% if item.accession_number %}
+                    <div>
+                      <dt>Accession number</dt>
+                      <dd>{{ item.accession_number }}</dd>
+                    </div>
+                  {% endif %}
+                  {% if item.serial_number %}
+                    <div>
+                      <dt>Serial number</dt>
+                      <dd>{{ item.serial_number }}</dd>
+                    </div>
+                  {% endif %}
+                  {% if item.quantity %}
+                    <div>
+                      <dt>Quantity</dt>
+                      <dd>{{ item.quantity }}</dd>
+                    </div>
+                  {% endif %}
+                </dl>
+              </div>
+
+              <div class="col-md-6">
+                <dl class="inventory-item-meta">
+                  {% if item.condition %}
+                    <div>
+                      <dt>Condition</dt>
+                      <dd>{{ item.condition }}</dd>
+                    </div>
+                  {% endif %}
+                  {% if item.operational_status %}
+                    <div>
+                      <dt>Operational status</dt>
+                      <dd>{{ item.operational_status }}</dd>
+                    </div>
+                  {% endif %}
+                  {% if item.restoration_status %}
+                    <div>
+                      <dt>Restoration status</dt>
+                      <dd>{{ item.restoration_status }}</dd>
+                    </div>
+                  {% endif %}
+                  {% if item.location %}
+                    <div>
+                      <dt>Location</dt>
+                      <dd>{{ item.location }}</dd>
+                    </div>
+                  {% endif %}
+                  {% if item.acquisition_date %}
+                    <div>
+                      <dt>Acquisition date</dt>
+                      <dd>{{ item.acquisition_date | date: "%B %d, %Y" }}</dd>
+                    </div>
+                  {% endif %}
+                  {% if item.acquisition_source %}
+                    <div>
+                      <dt>Acquisition source</dt>
+                      <dd>{{ item.acquisition_source }}</dd>
+                    </div>
+                  {% endif %}
+                  {% if item.provenance %}
+                    <div>
+                      <dt>Provenance</dt>
+                      <dd>{{ item.provenance }}</dd>
+                    </div>
+                  {% endif %}
+                </dl>
+              </div>
+            </div>
+
+            {% if item.materials or item.dimensions or item.notes %}
+              <div class="row gy-4 inventory-item-card__secondary">
+                {% if item.materials %}
+                  <div class="col-lg-4">
+                    <h2 class="inventory-item-card__heading">Materials</h2>
+                    <p>{{ item.materials }}</p>
+                  </div>
+                {% endif %}
+                {% if item.dimensions %}
+                  <div class="col-lg-4">
+                    <h2 class="inventory-item-card__heading">Dimensions</h2>
+                    <p>{{ item.dimensions }}</p>
+                  </div>
+                {% endif %}
+                {% if item.notes %}
+                  <div class="col-lg-4">
+                    <h2 class="inventory-item-card__heading">Notes</h2>
+                    <p>{{ item.notes }}</p>
+                  </div>
+                {% endif %}
+              </div>
+            {% endif %}
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+</main>
