@@ -29,7 +29,9 @@ layout: default
               </div>
             {% endif %}
 
+            {% if page.category or page.manufacturer_name or page.model_name or page.year_of_manufacture or page.country_of_origin or page.serial_number or page.quantity %}
             <div class="row gy-4">
+              {% if page.category or page.manufacturer_name or page.model_name or page.year_of_manufacture or page.country_of_origin %}
               <div class="col-md-6">
                 <dl class="inventory-item-meta">
                   {% if page.category %}
@@ -62,12 +64,13 @@ layout: default
                       <dd>{{ page.country_of_origin }}</dd>
                     </div>
                   {% endif %}
-                  {% if page.accession_number %}
-                    <div>
-                      <dt>Accession number</dt>
-                      <dd>{{ page.accession_number }}</dd>
-                    </div>
-                  {% endif %}
+                </dl>
+              </div>
+              {% endif %}
+
+              {% if page.serial_number or page.quantity %}
+              <div class="col-md-6">
+                <dl class="inventory-item-meta">
                   {% if page.serial_number %}
                     <div>
                       <dt>Serial number</dt>
@@ -82,73 +85,22 @@ layout: default
                   {% endif %}
                 </dl>
               </div>
-
-              <div class="col-md-6">
-                <dl class="inventory-item-meta">
-                  {% if page.condition %}
-                    <div>
-                      <dt>Condition</dt>
-                      <dd>{{ page.condition }}</dd>
-                    </div>
-                  {% endif %}
-                  {% if page.operational_status %}
-                    <div>
-                      <dt>Operational status</dt>
-                      <dd>{{ page.operational_status }}</dd>
-                    </div>
-                  {% endif %}
-                  {% if page.restoration_status %}
-                    <div>
-                      <dt>Restoration status</dt>
-                      <dd>{{ page.restoration_status }}</dd>
-                    </div>
-                  {% endif %}
-                  {% if page.location %}
-                    <div>
-                      <dt>Location</dt>
-                      <dd>{{ page.location }}</dd>
-                    </div>
-                  {% endif %}
-                  {% if page.acquisition_date %}
-                    <div>
-                      <dt>Acquisition date</dt>
-                      <dd>{{ page.acquisition_date | date: "%B %d, %Y" }}</dd>
-                    </div>
-                  {% endif %}
-                  {% if page.acquisition_source %}
-                    <div>
-                      <dt>Acquisition source</dt>
-                      <dd>{{ page.acquisition_source }}</dd>
-                    </div>
-                  {% endif %}
-                  {% if page.provenance %}
-                    <div>
-                      <dt>Provenance</dt>
-                      <dd>{{ page.provenance }}</dd>
-                    </div>
-                  {% endif %}
-                </dl>
-              </div>
+              {% endif %}
             </div>
+            {% endif %}
 
-            {% if page.materials or page.dimensions or page.notes %}
+            {% if page.materials or page.dimensions %}
               <div class="row gy-4 inventory-item-card__secondary">
                 {% if page.materials %}
-                  <div class="col-lg-4">
+                  <div class="col-lg-6">
                     <h2 class="inventory-item-card__heading">Materials</h2>
                     <p>{{ page.materials }}</p>
                   </div>
                 {% endif %}
                 {% if page.dimensions %}
-                  <div class="col-lg-4">
+                  <div class="col-lg-6">
                     <h2 class="inventory-item-card__heading">Dimensions</h2>
                     <p>{{ page.dimensions }}</p>
-                  </div>
-                {% endif %}
-                {% if page.notes %}
-                  <div class="col-lg-4">
-                    <h2 class="inventory-item-card__heading">Notes</h2>
-                    <p>{{ page.notes }}</p>
                   </div>
                 {% endif %}
               </div>

@@ -8,30 +8,22 @@ ROOT = Path(__file__).resolve().parent.parent
 DATA_FILE = ROOT / "_data" / "inventory-export.json"
 OUTPUT_DIR = ROOT / "_inventory"
 
-FIELD_ORDER = [
-    "title",
-    "item_code",
-    "short_code",
-    "permalink",
-    "category",
-    "manufacturer_name",
-    "model_name",
-    "accession_number",
-    "serial_number",
-    "year_of_manufacture",
-    "country_of_origin",
-    "quantity",
-    "condition",
-    "operational_status",
-    "restoration_status",
-    "location",
-    "acquisition_date",
-    "acquisition_source",
-    "provenance",
-    "materials",
-    "dimensions",
-    "notes",
-    "description",
+DOCUMENT_FIELDS = [
+    ("layout", "layout"),
+    ("title", "title"),
+    ("item_code", "item_code"),
+    ("short_code", "short_code"),
+    ("permalink", "permalink"),
+    ("description", "description"),
+    ("category", "category"),
+    ("manufacturer_name", "manufacturer_name"),
+    ("model_name", "model_name"),
+    ("serial_number", "serial_number"),
+    ("year_of_manufacture", "year_of_manufacture"),
+    ("country_of_origin", "country_of_origin"),
+    ("quantity", "quantity"),
+    ("materials", "materials"),
+    ("dimensions", "dimensions"),
 ]
 
 
@@ -47,44 +39,33 @@ def yaml_quote(value: str) -> str:
 
 
 def build_document(item: dict, short_code: str) -> str:
-    front_matter = {
+    document = {
         "layout": "inventory-item",
         "title": item.get("name") or "Inventory Item",
         "item_code": item.get("item_code"),
         "short_code": short_code,
         "permalink": f"/m/{short_code}/",
+        "description": item.get("description"),
         "category": item.get("category"),
         "manufacturer_name": item.get("manufacturer_name"),
         "model_name": item.get("model_name"),
-        "accession_number": item.get("accession_number"),
         "serial_number": item.get("serial_number"),
         "year_of_manufacture": item.get("year_of_manufacture"),
         "country_of_origin": item.get("country_of_origin"),
         "quantity": item.get("quantity"),
-        "condition": item.get("condition"),
-        "operational_status": item.get("operational_status"),
-        "restoration_status": item.get("restoration_status"),
-        "location": item.get("location"),
-        "acquisition_date": item.get("acquisition_date"),
-        "acquisition_source": item.get("acquisition_source"),
-        "provenance": item.get("provenance"),
         "materials": item.get("materials"),
         "dimensions": item.get("dimensions"),
-        "notes": item.get("notes"),
-        "description": item.get("description"),
     }
 
     lines = ["---"]
-    for field_name in ["layout", *FIELD_ORDER]:
-        if field_name not in front_matter:
-          continue
-        value = front_matter[field_name]
+    for output_name, source_name in DOCUMENT_FIELDS:
+        value = document.get(source_name)
         if value is None:
             continue
         if isinstance(value, str):
-            lines.append(f"{field_name}: {yaml_quote(value)}")
+            lines.append(f"{output_name}: {yaml_quote(value)}")
         else:
-            lines.append(f"{field_name}: {value}")
+            lines.append(f"{output_name}: {value}")
     lines.append("---")
     lines.append("")
     return "\n".join(lines)
@@ -99,7 +80,7 @@ def main() -> None:
         existing_file.unlink()
 
     seen_codes = {}
-    for item in items:
+    for item in sorted(items, key=lambda entry: entry.get("item_code", "")):
         if not item.get("is_active"):
             continue
 
