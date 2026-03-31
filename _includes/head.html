@@ -1,4 +1,3 @@
-<head>
     <meta charset="utf-8">
     <meta content="width=device-width, initial-scale=1.0" name="viewport">
     <title>Discs and Machines - Sunny's Gramophone Museum</title>
@@ -83,12 +82,10 @@
   </script>
   
   <script>
-    window.onload = function(){
-        fetchJSONData();
-    };
+    window.addEventListener('load', fetchJSONData);
   
     function fetchJSONData() {
-      fetch("./data.json")
+      fetch("{{ '/data.json' | relative_url }}")
         .then((res) => {
           if (!res.ok) {
             throw new Error
@@ -116,4 +113,3 @@
     }
   </script>
     
-  </head>

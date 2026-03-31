@@ -1,4 +1,4 @@
-version: '3.8'
+# Docker Compose configuration for Jekyll development environment
 
 services:
   jekyll:
@@ -8,7 +8,7 @@ services:
     volumes:
       - .:/site
     ports:
-      - "4001:4000"
+      - "4042:4000"
     command: >
       sh -c "
       apt-get update &&
