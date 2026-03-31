@@ -15,5 +15,5 @@
 ## Conventions
 - Use `{{ site.baseurl }}` for internal asset and page URLs in templates.
 - Keep Jekyll front matter valid on every page and post. Broken YAML will break rendering.
-- Contact details are populated at runtime from `data.json` by the script in `_includes/head.html`, using CSS classes such as `mu-email`, `mu-phone`, and `mu-address`. When changing contact content, keep the JSON data and the expected class names in sync.
+- Contact details are defined in `_config.yml` and rendered directly in the templates. When changing contact content, keep the shared config values and any structured data in sync.
 - Preserve the existing BootstrapMade Day template structure and Bootstrap-based class patterns unless the task calls for a broader redesign.

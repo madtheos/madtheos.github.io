@@ -332,7 +332,7 @@ title: Home
             <div class="info-item d-flex flex-column justify-content-center align-items-center" data-aos="" data-aos-delay="200">
               <i class="bi bi-geo-alt"></i>
               <h3>Address</h3>
-              <p><span  class="mu-address">javascript-required</span></p>
+              <p>{{ site.address }}</p>
             </div>
           </div><!-- End Info Item -->
 
@@ -340,7 +340,7 @@ title: Home
             <div class="info-item d-flex flex-column justify-content-center align-items-center" data-aos="" data-aos-delay="300">
               <i class="bi bi-telephone"></i>
               <h3>Call Us</h3>
-              <p><span  class="mu-phone">javascript-required</span></p>
+              <p><a href="tel:{{ site.phone | replace: ' ', '' }}">{{ site.phone }}</a></p>
             </div>
           </div><!-- End Info Item -->
 
@@ -348,7 +348,7 @@ title: Home
             <div class="info-item d-flex flex-column justify-content-center align-items-center" data-aos="" data-aos-delay="400">
               <i class="bi bi-envelope"></i>
               <h3>Email Us</h3>
-              <p><span  class="mu-email">javascript-required</span></p>
+              <p><a href="mailto:{{ site.email }}">{{ site.email }}</a></p>
             </div>
           </div><!-- End Info Item -->
 

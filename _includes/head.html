@@ -66,7 +66,7 @@
         "longitude": 76.755651
       },
       "description": "Family-owned private museum of gramophones and other antiques, and an archive of gramophone records, since 2015.",
-      "telephone": "+91 8137 0202 85",
+      "telephone": "{{ site.phone }}",
       "url": "https://www.discsmachines.in"
     }
   </script>
@@ -81,35 +81,3 @@
     }
   </script>
   
-  <script>
-    window.addEventListener('load', fetchJSONData);
-  
-    function fetchJSONData() {
-      fetch("{{ '/data.json' | relative_url }}")
-        .then((res) => {
-          if (!res.ok) {
-            throw new Error
-              (`HTTP error! Status: ${res.status}`);
-          }
-          return res.json();
-        })
-        .then((data) => {
-              //window.alert(data.info[0].class);
-              processInfo(data.info);
-              //console.log(data)
-            })
-        .catch((error) => 
-            console.error("Unable to fetch data:", error));
-    }
-  
-    function processInfo(info){
-      //window.alert(info[0].val);
-      for (var i=0; i < info.length; i++) {
-        var dom_items = document.getElementsByClassName(info[i].class);
-        for (var j=0; j < dom_items.length; j++) {
-          dom_items[j].innerHTML = info[i].value;
-        }
-      }
-    }
-  </script>
-    

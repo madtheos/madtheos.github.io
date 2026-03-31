@@ -6,10 +6,9 @@
           <div class="footer-about">
             <a href="{{ site.baseurl }}/index.html" class="logo sitename">Discs and Machines</a>
             <div class="footer-contact pt-3">
-              <p>Plassanal P.O.,</p>
-              <p>Kerala, PIN: 686579</p>
-              <p class="mt-3"><strong>Phone:</strong> <span class="mu-phone">javascript-required</span></p>
-              <p><strong>Email:</strong> <span class="mu-email">javascript-required</span></p>
+              <p>{{ site.address }}</p>
+              <p class="mt-3"><strong>Phone:</strong> <a href="tel:{{ site.phone | replace: ' ', '' }}">{{ site.phone }}</a></p>
+              <p><strong>Email:</strong> <a href="mailto:{{ site.email }}">{{ site.email }}</a></p>
             </div>
             <div class="social-links d-flex mt-4">
               <a href="https://www.facebook.com/discsandmachines/" target="_blank"><i class="bi bi-facebook"></i></a>
