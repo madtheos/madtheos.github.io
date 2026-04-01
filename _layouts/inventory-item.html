@@ -1,0 +1,120 @@
+---
+layout: default
+---
+
+<main class="main">
+  <div class="page-title dark-background" data-aos="fade">
+    <div class="container">
+      <nav class="breadcrumbs">
+        <ol>
+          <li><a href="{{ site.baseurl }}/">Home</a></li>
+          <li class="current">Machines</li>
+          <li class="current">{{ page.short_code }}</li>
+        </ol>
+      </nav>
+      <h1>Exhibit {{ page.short_code }} (page under construction)</h1>
+      {% if page.item_code %}
+        <p class="inventory-item-page__subtitle">Catalogue code {{ page.item_code }}</p>
+      {% endif %}
+    </div>
+  </div>
+
+  <section class="starter-section section">
+    <div class="container" data-aos="fade-up">
+      <div class="section-title">
+        <span>Exhibit</span>
+        <h2>{{ page.title }}</h2>
+        <p>{{ page.item_code }}</p>
+      </div>
+
+      <div class="row justify-content-center">
+        <div class="col-lg-10">
+          <div class="inventory-item-card">
+            {% if page.description %}
+              <div class="inventory-item-card__intro">
+                <p>{{ page.description }}</p>
+              </div>
+            {% endif %}
+
+            {% if page.category or page.manufacturer_name or page.model_name or page.year_of_manufacture or page.country_of_origin or page.serial_number or page.quantity %}
+            <div class="row gy-4">
+              {% if page.category or page.manufacturer_name or page.model_name or page.year_of_manufacture or page.country_of_origin %}
+              <div class="col-md-6">
+                <dl class="inventory-item-meta">
+                  {% if page.category %}
+                    <div>
+                      <dt>Category</dt>
+                      <dd>{{ page.category }}</dd>
+                    </div>
+                  {% endif %}
+                  {% if page.manufacturer_name %}
+                    <div>
+                      <dt>Manufacturer</dt>
+                      <dd>{{ page.manufacturer_name }}</dd>
+                    </div>
+                  {% endif %}
+                  {% if page.model_name %}
+                    <div>
+                      <dt>Model</dt>
+                      <dd>{{ page.model_name }}</dd>
+                    </div>
+                  {% endif %}
+                  {% if page.year_of_manufacture %}
+                    <div>
+                      <dt>Year of manufacture</dt>
+                      <dd>{{ page.year_of_manufacture }}</dd>
+                    </div>
+                  {% endif %}
+                  {% if page.country_of_origin %}
+                    <div>
+                      <dt>Country of origin</dt>
+                      <dd>{{ page.country_of_origin }}</dd>
+                    </div>
+                  {% endif %}
+                </dl>
+              </div>
+              {% endif %}
+
+              {% if page.serial_number or page.quantity %}
+              <div class="col-md-6">
+                <dl class="inventory-item-meta">
+                  {% if page.serial_number %}
+                    <div>
+                      <dt>Serial number</dt>
+                      <dd>{{ page.serial_number }}</dd>
+                    </div>
+                  {% endif %}
+                  {% if page.quantity %}
+                    <div>
+                      <dt>Quantity</dt>
+                      <dd>{{ page.quantity }}</dd>
+                    </div>
+                  {% endif %}
+                </dl>
+              </div>
+              {% endif %}
+            </div>
+            {% endif %}
+
+            {% if page.materials or page.dimensions %}
+              <div class="row gy-4 inventory-item-card__secondary">
+                {% if page.materials %}
+                  <div class="col-lg-6">
+                    <h2 class="inventory-item-card__heading">Materials</h2>
+                    <p>{{ page.materials }}</p>
+                  </div>
+                {% endif %}
+                {% if page.dimensions %}
+                  <div class="col-lg-6">
+                    <h2 class="inventory-item-card__heading">Dimensions</h2>
+                    <p>{{ page.dimensions }}</p>
+                  </div>
+                {% endif %}
+              </div>
+            {% endif %}
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+</main>

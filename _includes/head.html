@@ -1,0 +1,85 @@
+    {% assign meta_description = page.description | default: site.description | strip_html | strip_newlines | escape_once %}
+    {% if page.title and page.title != 'Home' %}
+      {% assign meta_title = page.title | append: ' | Discs and Machines' %}
+    {% else %}
+      {% assign meta_title = "Discs and Machines - Sunny's Gramophone Museum" %}
+    {% endif %}
+    <meta charset="utf-8">
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
+    <title>{{ meta_title }}</title>
+    <meta content="{{ meta_description }}" name="description" >
+    <meta content="shellac, gramophones, phonographs, 78rpm, vinyl, wire recorders, projectors, cassette tape, sunny mathew, history, 
+      music, vintage, antique, exhibits, museum, archive, research, plassanal, pala, erattupetta, kerala, india" name="keywords" >
+    
+    <!-- Open Graph meta tags -->
+    <meta property="og:title" content="{{ meta_title }}">
+    <meta property="og:site_name" content="Official Site of Discs and Machines Gramophone Museum">
+    <meta property="og:url" content="{{ page.url | absolute_url }}">
+    <meta property="og:description" content="{{ meta_description }}">
+    <meta property="og:type" content="business.business">
+    <meta property="og:image" content="https://www.discsmachines.in/assets/img/og-meta.jpg">
+  
+    <!-- site ownership verification tags -->
+    <meta name="google-site-verification" content="X8Kt6q-qZDrYE9rgafPmJhgr_jaHWPGRCHNkI1qs9DE" />
+  
+    <!-- Favicons -->
+    <link href="{{ site.baseurl }}/assets/img/favicon.png" rel="icon">
+    <link href="{{ site.baseurl }}/assets/img/apple-touch-icon.png" rel="apple-touch-icon">
+  
+    <!-- Fonts -->
+    <link href="https://fonts.googleapis.com" rel="preconnect">
+    <link href="https://fonts.gstatic.com" rel="preconnect" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,300;1,400;1,500;1,600;1,700;1,800&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Raleway:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+  
+    <!-- Vendor CSS Files -->
+    <link href="{{ site.baseurl }}/assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+    <link href="{{ site.baseurl }}/assets/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
+    <link href="{{ site.baseurl }}/assets/vendor/aos/aos.css" rel="stylesheet">
+    <link href="{{ site.baseurl }}/assets/vendor/swiper/swiper-bundle.min.css" rel="stylesheet">
+    <link href="{{ site.baseurl }}/assets/vendor/glightbox/css/glightbox.min.css" rel="stylesheet">
+  
+    <!-- Main CSS File -->
+    <link href="{{ site.baseurl }}/assets/css/main.css" rel="stylesheet">
+  
+    <!-- =======================================================
+    * Template Name: Day
+    * Template URL: https://bootstrapmade.com/day-multipurpose-html-template-for-free/
+    * Updated: Jun 29 2024 with Bootstrap v5.3.3
+    * Author: BootstrapMade.com
+    * License: https://bootstrapmade.com/license/
+    ======================================================== -->
+    
+  <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": ["TouristAttraction","ArchiveOrganization","Museum"],
+      "name": "Discs and Machines Gramophone Museum",
+      "address": {
+        "@type": "PostalAddress",
+        "addressLocality": "Plassanal P. O.",
+        "addressRegion": "Kerala",
+        "addressCountry": "IN",
+        "postalCode": "686579",
+        "streetAddress": "Museum Road"
+      },
+      "geo": {
+        "@type": "GeoCoordinates",
+        "latitude": 9.707301,
+        "longitude": 76.755651
+      },
+      "description": "Family-owned private museum of gramophones and other antiques, and an archive of gramophone records, since 2015.",
+      "telephone": "{{ site.phone }}",
+      "url": "https://www.discsmachines.in"
+    }
+  </script>
+  
+  <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "WebSite",
+      "name": "Discs and Machines - Sunny's Gramophone Museum and Records Archive",
+      "alternateName": ["Discs and Machines", "Discs & Machines", "Sunny's Gramophone Museum", "Plassanal Museum"],
+      "url": "https://www.discsmachines.in/"
+    }
+  </script>
+  

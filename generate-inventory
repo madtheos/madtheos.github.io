@@ -1,0 +1,13 @@
+#!/usr/bin/env bash
+
+set -euo pipefail
+
+ROOT_DIR="$(cd "$(dirname "$0")" && pwd)"
+VENV_PYTHON="$ROOT_DIR/.venv/bin/python"
+SCRIPT_PATH="$ROOT_DIR/scripts/generate_inventory_collection.py"
+
+if [[ -x "$VENV_PYTHON" ]]; then
+  exec "$VENV_PYTHON" "$SCRIPT_PATH"
+fi
+
+exec python3 "$SCRIPT_PATH"
