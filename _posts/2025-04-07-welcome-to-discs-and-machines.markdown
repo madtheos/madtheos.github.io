@@ -5,26 +5,12 @@ date:   2025-04-07 22:40:18 +0530
 categories: jekyll update
 description: An introductory update from Discs and Machines about the museum and this site's news section.
 ---
-You’ll find this post in your `_posts` directory. Go ahead and edit it and re-build the site to see your changes. You can rebuild the site in many different ways, but the most common way is to run `jekyll serve`, which launches a web server and auto-regenerates your site when a file is updated.
 
-Jekyll requires blog post files to be named according to the following format:
+Welcome to the website of the Discs and Machines Gramophone Museum in Plassanal, Kerala. This site is where you can learn more about the museum, follow news and updates, and get a better sense of what you can expect when you visit.
 
-`YEAR-MONTH-DAY-title.MARKUP`
+Discs and Machines was founded in 2015 and is the first gramophone museum and records archive in the Indian sub-continent. The museum presents Sunny Mathew Kunnelpurayidom's personal collection, built over more than three decades, including rare early 20th century records, gramophones, phonographs, LP record players, and other antique machines.
 
-Where `YEAR` is a four-digit number, `MONTH` and `DAY` are both two-digit numbers, and `MARKUP` is the file extension representing the format used in the file. After that, include the necessary front matter. Take a look at the source for this post to get an idea about how it works.
+Visitors can explore the history of sound recording, hear mechanically reproduced sound, and see a wide range of vintage exhibits in a quiet countryside setting. If you are planning a visit, please note that entry is by appointment. Researchers may also be able to arrange accommodation by contacting us directly.
 
-Jekyll also offers powerful support for code snippets:
+This news section will be used to share updates from the museum, highlights from the collection, and more information about the work we do. Thank you for visiting, and we look forward to welcoming you in person.
 
-{% highlight ruby %}
-def print_hi(name)
-  puts "Hi, #{name}"
-end
-print_hi('Tom')
-#=> prints 'Hi, Tom' to STDOUT.
-{% endhighlight %}
-
-Check out the [Jekyll docs][jekyll-docs] for more info on how to get the most out of Jekyll. File all bugs/feature requests at [Jekyll’s GitHub repo][jekyll-gh]. If you have questions, you can ask them on [Jekyll Talk][jekyll-talk].
-
-[jekyll-docs]: https://jekyllrb.com/docs/home
-[jekyll-gh]:   https://github.com/jekyll/jekyll
-[jekyll-talk]: https://talk.jekyllrb.com/
