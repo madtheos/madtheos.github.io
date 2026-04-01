@@ -8,10 +8,11 @@ layout: default
       <nav class="breadcrumbs">
         <ol>
           <li><a href="{{ site.baseurl }}/">Home</a></li>
+          <li class="current">machines</li>
           <li class="current">{{ page.short_code }}</li>
         </ol>
       </nav>
-      <h1>{{ page.title }}</h1>
+      <h1>Exhibit {{ page.short_code }}</h1>
       {% if page.item_code %}
         <p class="inventory-item-page__subtitle">Catalogue code {{ page.item_code }}</p>
       {% endif %}
@@ -20,6 +21,12 @@ layout: default
 
   <section class="starter-section section">
     <div class="container" data-aos="fade-up">
+      <div class="section-title">
+        <span>Exhibit</span>
+        <h2>{{ page.title }}</h2>
+        <p>Exhibit {{ page.short_code }}</p>
+      </div>
+
       <div class="row justify-content-center">
         <div class="col-lg-10">
           <div class="inventory-item-card">
